@@ -53,7 +53,7 @@
 #deactivate_barangay_admin .modal-confirm .btn, .modal-confirm .btn:active {
 	color: #fff;
 	border-radius: 4px;
-	background: #60c7c1;
+	background: #42a0ff;
 	text-decoration: none;
 	transition: all 0.4s;
 	line-height: normal;

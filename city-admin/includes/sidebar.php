@@ -21,7 +21,7 @@
         <li class="nav-item"><a class="nav-link" href="manage-juvenile.php" id="nav_users">
         <span class="fa-solid px-md-2 me-md-3"></span>Manage juvenile</a></li>
 
-        <li class="nav-item"><a class="nav-link" href="generate-statistics-offenses.php" id="nav_users">
+        <li class="nav-item"><a class="nav-link" href="generate-statistics-time.php" id="nav_users">
         <span class="fa-solid px-md-2 me-md-3"></span>Generate Statistics</a></li>
 
       </ul>

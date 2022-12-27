@@ -229,19 +229,22 @@ console.log(x_y_value)
 
     var percentage = (value / sum) * 100;
 
-    percentage = 100 - parseInt(percentage);
-
-    if(parseInt(percentage) >= 90)
+    if(parseInt(percentage) <= 20)
     {
-      percentage = 89;
+      myColors[index] = '#2eb85c'
     }
-    else if(parseInt(percentage) <= 20)
+    else if(parseInt(percentage) <= 40)
     {
-      percentage = 21;
+      myColors[index] = '#f9b115'
     }
-
-
-    myColors[index]="hsl(212, 17%, "+percentage+"%)";
+    else if(parseInt(percentage) <= 60)
+    {
+      myColors[index] = '#fd7e14'
+    }
+    else 
+    {
+      myColors[index] = '#e55353'
+    }
   
   });
 
@@ -344,9 +347,8 @@ function jv_charts()
                   });
 
                 var percentage_display = (parseInt(context.parsed.y) / sum) * 100
-                percentage_display = 100 - parseInt(percentage_display);
-                var modified_label = +parseInt(percentage_display).toLocaleString('en-US')+"% of juveniles have committed "+xValues[context.parsed.x]          
-                return ''
+                var modified_label = +parseInt(percentage_display).toLocaleString('en-US')+"%"          
+                return modified_label 
               },
             labelPointStyle: function(context) {
               return {

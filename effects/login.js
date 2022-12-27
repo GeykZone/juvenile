@@ -131,3 +131,19 @@ else
 }
 }
 //trigger error messages
+
+function showPassword(pass, lbl, txt) {
+    var x = document.getElementById(pass);
+    var x_lbl = document.getElementById(lbl);
+    var x_txt = document.getElementById(txt);
+  
+    if (x.type === "password") {
+      x.type = "text";
+      x_lbl.style.opacity = 1
+      x_txt.innerHTML = "Hide Password";
+    } else {
+      x.type = "password";
+      x_lbl.style.opacity = 0.5
+      x_txt.innerHTML = "Show Password";
+    }
+  }

@@ -59,11 +59,7 @@ include('includes/sidebar.php');
 
   <a class="btn mb-3  border-0 shadow-sm btn-dark pt-1 pb-1 px-3 fw-bolder" id="filter_btn" data-coreui-toggle="modal" href="#filter_offense" role="button" >Filter <span class="fa-solid ms-1 fa-filter"></span></a>
 
-  <a class="btn mb-3 ms-lg-2 border-0 shadow-sm btn-dark pt-1 pb-1 px-3 fw-bolder dropdown-trigger"  id="hp_option" type="button" data-coreui-toggle="dropdown" aria-expanded="false" >Switch <span class="fa-solid ms-1"></span></a>
-  <ul class="dropdown-menu align-content-center shadow border-0" id="hp_dropdown_options">
-    <li><a class="dropdown-item" href="generate-statistics-offenses.php"><span class="fa-solid" style="margin-right: 10px; color: #294168bf;"></span>Offenses Statistic</a></li>
-    <li><a class="dropdown-item" href="generate-statistics-time.php"><span class="fa-solid" style="margin-right: 14px; margin-left:3px; color: #294168bf;"></span>Time Span</a></li>
-  </ul> 
+  <a class="btn mb-3 ms-lg-2 border-0 shadow-sm btn-dark pt-1 pb-1 px-3 fw-bolder "  id="hp_option" type="button"  href="generate-statistics-time.php"  >Time Span <span class="fa-solid ms-1"></span></a>
 
   </div>
 

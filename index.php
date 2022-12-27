@@ -20,7 +20,6 @@
 
 <!--main css-->
 <link href="resourcess/css/login.css" rel="stylesheet" id="bootstrap-css">
-<script src="resourcess/js/login.js"></script>
 
 <!--jquery-->
 <script src="resourcess/js/jquery.min.js"></script>
@@ -146,16 +145,19 @@
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" name="password" id="password"  class="form-control" aria-describedby="usernameHelp" placeholder="Enter Password">
-            <div class="invalid-feedback" id="invalid_username">
+            <div class="invalid-feedback" id="invalid_password">
             </div>
+            <label id="pass_lbl" class="form-label mt-2 " style="opacity: 0.50;"><input id="new_pass_checkbox" type="checkbox" onclick="showPassword('password','pass_lbl','pass_span')" class="mr-1"><span id="pass_span"> Show Password</span></label>
           </div>
-          <div class="form-group form-check">
-            <label class="form-check-label">
+
+          <div class="form-group form-check border-0 rounded rounded-4 py-1 pl-4" style="background-color: #eeeeee;">
+            <label class="form-check-label ml-2">
               <input class="form-check-input" type="checkbox" id = "checkbox"> Remember me
             </label>
           </div>
-          <div class="col-md-12 text-center ">
-            <button type="button" id="login_btn" class=" btn btn-block mybtn btn-dark tx-tfm">Login</button>
+
+          <div class="col-md-12 text-center" style="margin-top: 30px;">
+            <button type="button" id="login_btn" class=" btn btn-block mybtn btn-dark tx-tfm ">Login</button>
           </div>
     </form>
 </div>

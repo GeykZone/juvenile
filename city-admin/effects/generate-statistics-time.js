@@ -240,10 +240,10 @@ function jv_charts()
      label: "",
      data: yValues,
      backgroundColor: '#d3d9e6ff',
-     pointBackgroundColor: '#38404d',
-     pointHoverBackgroundColor: '#38404d',
-     borderColor: '#38404d',
-     borderWidth: 1,
+     pointBackgroundColor: '#6c7685',
+     pointHoverBackgroundColor: '#6c7685',
+     borderColor: '#6c7685',
+     borderWidth: 2,
      //borderRadius: 8,
      pointRadius: 1,
      hoverRadius:5,
@@ -332,8 +332,8 @@ function jv_charts()
                   });
 
                 var percentage_display = (parseInt(context.parsed.y) / sum) * 100
-                var modified_label = +parseInt(percentage_display).toLocaleString('en-US')+"% of juveniles have committed "+xValues[context.parsed.x]          
-                return ''
+                var modified_label = +parseInt(percentage_display).toLocaleString('en-US')+"%"         
+                return modified_label
               },
             labelPointStyle: function(context) {
               return {
