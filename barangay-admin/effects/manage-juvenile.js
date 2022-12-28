@@ -77,44 +77,11 @@ $(document).ready(function()
     $(document).attr("title", "JDIS | Manage juvenile");
     select_with_search_box()
     generate_age()
-    enable_form()
     load_data_tables();
     get_juvenile_table_cell_value();
 })
 
-//enable the form when a barangay is picked
-function enable_form()
-{
-//new 
-$("#select_barangay").change(function(){ 
-var barangay_name = $("#select_barangay").text();
 
-if(barangay_name.trim().length != 0)
-{
-  $("#fieldset1").removeClass("d-none")
-}
-else
-{
-  $("#fieldset1").addClass("d-none")
-}
-});
-
-
-//update
-$("#update_select_barangay").change(function(){ 
-  var barangay_name = $("#update_select_barangay").text();
-  
-  if(barangay_name.trim().length != 0)
-  {
-    $("#update_fieldset1").removeClass("d-none")
-  }
-  else
-  {
-    $("#update_fieldset1").addClass("d-none")
-  }
-});
-}
-//enable the form when a barangay is picked end 
 
 // for select
 function select_with_search_box()
@@ -175,9 +142,8 @@ function load_data_tables() {
           null,
           null,
           null,
-          null,
         {
-          targets: 10,
+          targets: 9,
           render: function ( data ) {
 
               return '<div class = "d-flex gap-2 justify-content-end" >'+
@@ -193,7 +159,7 @@ function load_data_tables() {
 
       //disable the sorting of colomn
       "columnDefs": [ {
-        "targets": 10,
+        "targets": 9,
         "orderable": false
         } ],
   
@@ -202,9 +168,9 @@ function load_data_tables() {
             extend: 'copy',
             text: ' COPY',
   
-            title: 'Juvenile Delinquent Information System',
+            title: 'juvenile Delinquent Information System',
   
-            messageTop: 'List of Juveniles',
+            messageTop: 'List of Juveniles in Barangay '+my_barangay_name,
             //className: 'fa fa-solid fa-clipboard',
             
   
@@ -213,7 +179,7 @@ function load_data_tables() {
                 page: 'current'
             },
               //columns: [0, 1] //r.broj kolone koja se stampa u PDF
-              columns: [0,1,2,3,4,5,6,7,8,9],
+              columns: [0,1,2,3,4,5,6,7,8],
               // optional space between columns
               columnGap: 1
             }
@@ -223,9 +189,9 @@ function load_data_tables() {
             extend: 'excel',
             text: ' EXCEL',
   
-            title: 'Juvenile Delinquent Information System',
+            title: 'juvenile Delinquent Information System',
   
-            messageTop: 'List of Juveniles',
+            messageTop: 'List of Juveniles in Barangay '+my_barangay_name,
             //className: 'fa fa-solid fa-table',  //<i class="fa-solid fa-clipboard"></i>
             
   
@@ -234,7 +200,7 @@ function load_data_tables() {
                 page: 'current'
             },
               //columns: [0, 1] //r.broj kolone koja se stampa u PDF
-              columns: [0,1,2,3,4,5,6,7,8,9],
+              columns: [0,1,2,3,4,5,6,7,8],
               // optional space between columns
               columnGap: 1
             }
@@ -244,9 +210,9 @@ function load_data_tables() {
             extend: 'print',
             text: ' PDF',
   
-            title: 'Juvenile Delinquent Information System',
+            title: 'juvenile Delinquent Information System',
   
-            messageTop: 'List of Juveniles',
+            messageTop: 'List of Juveniles in Barangay '+my_barangay_name,
             //className: 'fa fa-print',
             
   
@@ -255,7 +221,7 @@ function load_data_tables() {
                 page: 'current'
             },
               //columns: [0, 1] //r.broj kolone koja se stampa u PDF
-              columns: [0,1,2,3,4,5,6,7,8,9],
+              columns: [0,1,2,3,4,5,6,7,8],
               // optional space between columns
               columnGap: 1
             },
@@ -306,10 +272,6 @@ $("#close_juvenile").click(function()
 {
   setTimeout(function()
   {
-    var $select = $('#select_barangay').selectize();
-    var control = $select[0].selectize;
-    control.clear();
-
     $("#full_name").val("")
     $("#address").val("")
     $('#birthdate').val("");
@@ -342,7 +304,7 @@ function click_value(this_value)
 //submit new juvenile
 $("#add_juvenile_btn").click(function()
 {
-  var crime_location = $("#select_barangay").val()
+  var crime_location = my_barangay_id
   var full_name = $("#full_name").val()
   var address = $("#address").val()
 
@@ -360,12 +322,7 @@ $("#add_juvenile_btn").click(function()
   var contact_num = $("#contact").val()
   var email_address = $("#email").val();
 
-  if (crime_location.trim().length === 0) //check if value is empty
-  {
-    $("#select_barangay").addClass("is-invalid");
-    $("#select_brg_list .selectize-control").addClass("is-invalid");
-  }
-  else if(full_name.trim().length === 0) //check if value is empty
+  if(full_name.trim().length === 0) //check if value is empty
   {
     $("#full_name").addClass("is-invalid");
   }
@@ -463,7 +420,7 @@ $("#add_juvenile_btn").click(function()
 $("#update_juvenile_btn").click(function()
 {
 
-  var crime_location = $("#update_select_barangay").val()
+  var crime_location = my_barangay_id
   var full_name = $("#update_full_name").val()
   var address = $("#update_address").val()
 
@@ -614,11 +571,6 @@ if(confirmation == 1)
 {
 $('#add_juvenile').modal('toggle');
 
-
-var $select = $('#select_barangay').selectize();
-var control = $select[0].selectize;
-control.clear();
-
 $("#full_name").val("")
 $("#address").val("")
 $('#birthdate').val("");
@@ -690,11 +642,6 @@ $("#juvenile_table").on('click','.update_juvenile_value',function(){
     var col6=currentRow.find("td:eq(6)").text().trim($(this).text()); // get current row 1st TD value
     var col7=currentRow.find("td:eq(7)").text().trim($(this).text()); // get current row 1st TD value
     var col8=currentRow.find("td:eq(8)").text().trim($(this).text()); // get current row 1st TD value
-    var col9=currentRow.find("td:eq(9)").text().trim($(this).text()); // get current row 1st TD value
-
-    var $select = $("#update_select_barangay").selectize();
-    var selectize = $select[0].selectize;
-    selectize.setValue(selectize.search(col8).items[0].id);
 
     $("#update_full_name").val(col0)
     $("#update_address").val(col4)
@@ -711,9 +658,9 @@ $("#juvenile_table").on('click','.update_juvenile_value',function(){
     var selectize = $select[0].selectize;
     selectize.setValue(selectize.search(col7).items[0].id);
 
-    col9 = new Date(col9)
-    col9 = col9.getFullYear()+"-"+String(col9.getMonth() + 1).padStart(2, '0')+"-"+String(col9.getDate()).padStart(2, '0');
-    $("#update_date_of_offense").val(col9)
+    col8 = new Date(col8)
+    col8 = col8.getFullYear()+"-"+String(col8.getMonth() + 1).padStart(2, '0')+"-"+String(col8.getDate()).padStart(2, '0');
+    $("#update_date_of_offense").val(col8)
 
     $("#update_contact").val(col6.substr(3))
 
@@ -725,8 +672,6 @@ $("#juvenile_table").on('click','.update_juvenile_value',function(){
     {
       $("#update_email").val(col5)
     }
-
-
 
 });
 

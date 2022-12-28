@@ -8,14 +8,20 @@
 
         <li class="nav-title">MENU</li>
 
-        <li class="nav-item"><a class="nav-link" href="manage-barangay.php" id="nav_barangay">
-        <span class="fa-solid px-md-2 me-md-3"></span>Manage Barangays</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="manage-juvenile.php" id="nav_users">
+        <span class="fa-solid px-md-2 me-md-3"></span>Manage Juveniles</a></li>
 
-        <li class="nav-item"><a class="nav-link" href="manage-user.php" id="nav_users">
-        <span class="fa-solid px-md-2 me-md-3"></span>Manage Users</a></li>
+        <li class="nav-item"><a class="nav-link" href="generate-statistics-time.php" id="nav_users">
+        <span class="fa-solid px-md-2 me-md-3"></span>Generate Statistics</a></li>
 
       </ul>
     
     </div>
 
+<!--update password modal-->
+<?php include('update-password.php') ?>
+<!--update password modal end-->  
+
+<!--update password modal-->
+<?php include('update-username.php') ?>
+<!--update password modal end--> 

@@ -2,27 +2,15 @@
 <div class="modal-dialog modal-dialog-centered" >
 <div class="modal-content">
 <div class="modal-header border-0 shadow-sm" style="background-color:	#F0F0F0;">
-  <h5 class="modal-title" id="exampleModalLabel">Update Juvenile</h5>
+  <h5 class="modal-title" id="exampleModalLabel">Update juvenile</h5>
   <button type="button" id="close_add_barangay_admin" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body border-0 shadow-sm">
 
   
 <form action="" id="update_barangay_resident_form" name="update_barangay_resident_form" method="post">
-  <div class="mb-3" id="update_select_brg_list">
-  <label for="update_select_barangay" class="form-label">Update Offense Location*</label>
-  <select id="update_select_barangay"  name="update_select_barangay" class="form-control barangay-form shadow-sm">
-      <option value="">Pick a barangay</option>
-  <?php
-  include('functions/select_barangays.php');
-  ?>
-  </select>
-  <div class="invalid-feedback">
-      Please select a barangay.
-  </div>
-  </div>
-
-  <fieldset id="update_fieldset1" class="d-none">
+  
+  <fieldset id="update_fieldset1" class="">
   <div class="mb-3">
     <label for="update_full_name" class="form-label">Update Full Name*</label>
     <input type="text" name="update_full_name" maxlength="100" class=" form-control barangay-form" id="update_full_name" placeholder="Full name">

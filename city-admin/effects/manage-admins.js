@@ -331,7 +331,7 @@ function load_data_tables() {
             extend: 'copy',
             text: ' COPY',
   
-            title: 'juvenile Delinquent Information System',
+            title: 'Juvenile Delinquent Information System',
   
             messageTop: 'List of Barangay Admins',
             //className: 'fa fa-solid fa-clipboard',
@@ -352,7 +352,7 @@ function load_data_tables() {
             extend: 'excel',
             text: ' EXCEL',
   
-            title: 'juvenile Delinquent Information System',
+            title: 'Juvenile Delinquent Information System',
   
             messageTop: 'List of Barangay Admins',
             //className: 'fa fa-solid fa-table',  //<i class="fa-solid fa-clipboard"></i>
@@ -373,7 +373,7 @@ function load_data_tables() {
             extend: 'print',
             text: ' PDF',
   
-            title: 'juvenile Delinquent Information System',
+            title: 'Juvenile Delinquent Information System',
   
             messageTop: 'List of Barangay Admins',
             //className: 'fa fa-print',

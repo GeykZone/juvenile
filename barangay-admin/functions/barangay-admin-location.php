@@ -7,10 +7,10 @@ if ($result->num_rows > 0)
     while($row = $result->fetch_assoc()) 
     {
         $admin_location = $row['barangay'];
+        $admin_location_id = $row['barangay_tbl_id'];
     }
 
     $admin_location = strtoupper($admin_location);
-
 }
 
 ?>

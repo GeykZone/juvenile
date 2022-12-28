@@ -70,7 +70,7 @@ include('includes/sidebar.php');
 
             <div class="col-lg-12 mx-3 col-sm-12 mt-lg-0 mt-sm-0 text-md-start align-content-center dropdown-center">
             <a >
-            <span id="sort_chart" type="button" style="color: #294168bf;" class="align-content-center me-sm-2"><span class=" fa-solid "></span></span> Generated statistics for the month of <span class="this_month">current month</span>
+            <span id="sort_chart" type="button" style="color: #294168bf;" class="align-content-center me-sm-2"><span class=" fa-solid "></span></span> Generated statistic for the month of <span class="this_month">current month</span>
             </a>
             </div>
 
@@ -107,7 +107,7 @@ include('includes/sidebar.php');
           </div>
 
           <div class="col-lg-6 col-sm-12 mt-lg-0 mt-sm-2 text-md-start align-content-center dropdown-center ">
-          <span id="toggle_chart1" class="float-end" >
+          <span id="toggle_chart1" class="float-lg-end" >
           <span style="color: #294168bf;" class=" fa-solid align-content-center me-sm-2"></span> Total Juveniles: <span class="total_jv">0</span>
           </span>
           </div>
@@ -116,7 +116,7 @@ include('includes/sidebar.php');
         </div>
 
         <div class="table-responsive container-fluid" >
-          <table class="table table-striped table-borderless table-condensed  mb-0 w-100" id="juvenile_table"> 
+          <table class="table table-striped table-borderless table-condensed  mb-0 w-100" id="juvenile_table" cellspacing="0" width="100%"> 
             <thead class="fw-semibold border-0 shadow-sm" style="background-color:#202020; color: #F5F5F5;">
               <tr class="align-middle">
               <th style = "min-width: 200px;" >Full Name</th>
@@ -132,6 +132,11 @@ include('includes/sidebar.php');
             </tbody>
           </table>
           </div>
+
+          <div class="table-responsive container-fluid mt-2" >
+        <div class="dataTables_wrapper dt-bootstrap5 row" id="table_page">
+        </div>
+        </div>
 
         </div>
         </div>

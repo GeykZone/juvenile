@@ -404,7 +404,8 @@ function load_data_tables() {
       table = $('#juvenile_table').DataTable({
         
         "deferRender": true,
-        "dom":'t',
+        "dom": 'p',
+        "pageLength": 10,
         //"processing": true,
         "serverSide": true,
         "ajax": {
@@ -420,11 +421,6 @@ function load_data_tables() {
               return json.data;
           }      
         }, 
-        scrollCollapse: true,
-        scrollY: 150,
-        scroller: {
-            loadingIndicator: true
-        },
   
         "columns": [
             null,
@@ -442,5 +438,11 @@ function load_data_tables() {
   
       //to align the data table buttons
       $("#juvenile_table_wrapper").addClass("row"); 
+
+
+      $(".dataTables_paginate ").detach().appendTo('#table_page')
+      $(".dataTables_paginate ").addClass("col-lg-12 d-flex justify-content-center justify-content-lg-start justify-content-md-center justify-content-sm-center ")
+      $(".form-control").addClass("shadow-sm");
+      $(".form-select").addClass("shadow-sm");
   };
   //show data tables end
