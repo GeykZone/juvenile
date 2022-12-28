@@ -102,7 +102,7 @@
 /* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
   width: 10px;
-  height: 5px;
+height: 10px;
   background-color: #f5f5f5;
 }
 
@@ -114,7 +114,7 @@
 /* Mozilla */
 ::-moz-scrollbar {
   width: 10px;
-  height: 5px;
+height: 10px;
   background-color: #f5f5f5;
 }
 
@@ -126,7 +126,7 @@
 /* Microsoft */
 ::-ms-scrollbar {
   width: 10px;
-  height: 5px;
+height: 10px;
   background-color: #f5f5f5;
 }
 
