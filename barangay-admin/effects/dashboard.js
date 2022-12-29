@@ -429,7 +429,6 @@ function load_data_tables() {
             null,
             null,
             null,
-            null,
         ],
     
       });

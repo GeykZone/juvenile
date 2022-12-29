@@ -117,8 +117,7 @@ if(isset($_GET['jv_list']))
         array( 'db' => 'gender',    'dt' => 2, 'field' => 'gender'),
         array( 'db' => 'address',    'dt' => 3, 'field' => 'address'),
         array( 'db' => 'offense_name',    'dt' => 4, 'field' => 'offense_name'),
-        array( 'db' => 'barangay',    'dt' => 5, 'field' => 'barangay'),
-        array( 'db' => "DATE_FORMAT(date_of_offense,'%M %d, %Y')",    'dt' => 6, 'field' => "DATE_FORMAT(date_of_offense,'%M %d, %Y')"),
+        array( 'db' => "DATE_FORMAT(date_of_offense,'%M %d, %Y')",    'dt' => 5, 'field' => "DATE_FORMAT(date_of_offense,'%M %d, %Y')"),
     ); 
     
     // Include SQL query processing class 
