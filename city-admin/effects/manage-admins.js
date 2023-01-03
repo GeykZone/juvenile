@@ -449,7 +449,9 @@ function get_admin_table_cell_value()
 
       var col1=currentRow.find("td:eq(0)").text().trim($(this).text()); // get current row 1st TD value
 
-      admin_id = col1;
+      var newString = col1.replace(/ /g, "_");
+
+      admin_id = newString;
 
   });
 
