@@ -442,7 +442,7 @@ function click_value(this_value)
 function get_admin_table_cell_value()
 {
   //updating
-    $("#admin_table").on('click','.update_barangay_value',function(){
+    $("#admin_table").on('click','.edit_barangay_value',function(){
 
       // get the current row
       var currentRow=$(this).closest("tr");
@@ -452,5 +452,6 @@ function get_admin_table_cell_value()
       admin_id = col1;
 
   });
+
 }
 //get the table cell value when selected end
