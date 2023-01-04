@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2023 at 07:58 PM
+-- Generation Time: Jan 04, 2023 at 08:26 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -97,22 +97,6 @@ CREATE TABLE `offense_tbl` (
   `offense_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `offense_tbl`
---
-
-INSERT INTO `offense_tbl` (`id`, `offense_name`) VALUES
-(74, 'Rape'),
-(75, 'Reckless driving'),
-(76, 'Resisting arrest'),
-(77, 'Soliciting for prostitution'),
-(78, 'Theft'),
-(79, 'Threatening behavior'),
-(80, 'Unauthorized use of a computer'),
-(81, 'Unauthorized use of a credit card'),
-(82, 'Welfare fraud'),
-(83, 'Wire fraud');
-
 -- --------------------------------------------------------
 
 --
@@ -201,7 +185,7 @@ ALTER TABLE `jd_tbl`
 -- AUTO_INCREMENT for table `offense_tbl`
 --
 ALTER TABLE `offense_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

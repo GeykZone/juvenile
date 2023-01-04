@@ -160,17 +160,15 @@ console.log(x_y_value)
   //generate a color base on percentage
   $.each(yValues, function( index,value ) {
 
-    var percentage = (value / sum) * 100;
-
-    if(parseInt(percentage) <= 20)
+    if(parseInt(value) <= 20)
     {
       myColors[index] = '#2eb85c'
     }
-    else if(parseInt(percentage) <= 40)
+    else if(parseInt(value) <= 30)
     {
       myColors[index] = '#f9b115'
     }
-    else if(parseInt(percentage) <= 60)
+    else if(parseInt(value) <= 60)
     {
       myColors[index] = '#fd7e14'
     }

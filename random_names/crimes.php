@@ -91,22 +91,27 @@ $username = "root";
 $password = "";
 $db = mysqli_connect($hostname, $username, $password, $database);
 
-$validator;
+
+echo "<a href='index.php'>Back</a>";
+echo "<br>";
+echo "<br>";
 
 for ($i = 0; $i < count($crimes); $i++) {
     $crime = $crimes[$i];
     $query = "INSERT INTO offense_tbl (`offense_name`) VALUES ('$crime')";
     if (mysqli_query($db, $query)) {
 
-      $validator = "Successfully inserted ".count($crimes)." crimes";
+      echo "<br>";
+      echo "Successfully inserted ".$crime." crimes";
       
     } else {
 
-      $validator = "Error inserting ".count($crimes)." crimes";
+      echo "<br>";
+      echo "Error inserting ".$crime." crimes";
+
     }
   }
 
-echo $validator;
 echo "<br>";
 echo "<br>";
 echo "<a href='index.php'>Back</a>";

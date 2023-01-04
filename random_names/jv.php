@@ -157,7 +157,12 @@ for ($i = 0; $i < 100; $i++) {
 $limit = $_POST['numbers'];
 $gender = $_POST['gender'];
 $year_added = $_POST['year'];
-$validator;
+
+
+
+echo "<a href='index.php'>Back</a>";
+echo "<br>";
+echo "<br>";
 
 for ($i = 0; $i < $limit; $i++) {
     // generate a random index for each array
@@ -174,10 +179,29 @@ for ($i = 0; $i < $limit; $i++) {
     if($gender == 'Male')
     {
       $first_name = $filipino_names_male[$first_name_male_index];
+      $jv_gender = 'Male';
     }
     else if($gender == 'Female')
     {
       $first_name = $filipino_names_female[$first_name_female_index];
+      $jv_gender = 'Female';
+    }
+    else
+    {
+      $genders = array("Male", "Female");
+      $random_index = rand(0, 1);
+      $random_gender = $genders[$random_index];
+
+      $jv_gender = $random_gender;
+
+      if($random_gender == 'Male')
+      {
+        $first_name = $filipino_names_male[$first_name_male_index];
+      }
+      else if($random_gender == 'Female')
+      {
+        $first_name = $filipino_names_female[$first_name_female_index];
+      }
     }
 
     $middle_name = $filipino_middle_names[$middle_name_index];
@@ -189,6 +213,7 @@ for ($i = 0; $i < $limit; $i++) {
     // generate the full name by concatenating the first, middle, and last names
     $full_name = $first_name . ' ' . $middle_name . ' ' . $last_name;
     $jv_guardian = $jv_guardian_first_name . ' ' . $middle_name . ' ' . $last_name;
+   
 
     // generate a random age between 11 and 17
     $age = rand(11, 17);
@@ -220,16 +245,17 @@ for ($i = 0; $i < $limit; $i++) {
 
     // Insert a new row into the jd_tbl table with the random barangay_id and offense_id values
     $query = "INSERT INTO `jd_tbl`(`fullname`, `guardian_name`, `address`, `barangay_tbl_id`, `dob`, `age`, `gender`, `phone`, `offense_id`, `date_of_offense`)                                       
-    VALUES ('$full_name', '$jv_guardian', '$jv_address', '$barangay_id', '$birthday', '$age', '$gender', '$jv_contact', '$offense_id', '$date_of_offense')";
+    VALUES ('$full_name', '$jv_guardian', '$jv_address', '$barangay_id', '$birthday', '$age', '$jv_gender', '$jv_contact', '$offense_id', '$date_of_offense')";
      
     if (mysqli_query($db, $query)) {
-      $validator = "Successfully inserted ".$limit." crimes";
+      echo "<br>";
+      echo "Successfully inserted ".$full_name."";
     } else {
-      $validator = "Successfully inserted ".$limit." crimes";
+      echo "<br>";
+      echo "Error inserting ".$full_name."";
     }
   }
 
-echo $validator;
 echo "<br>";
 echo "<br>";
 echo "<a href='index.php'>Back</a>";
