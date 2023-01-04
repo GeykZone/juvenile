@@ -326,7 +326,7 @@ $("#close_juvenile").click(function()
 
     $("#date_of_offense").val("")
     $("#contact").val("")
-    $("#email").val("");
+    $("#guardian_name").val("");
   },100)
  
 })
@@ -358,7 +358,7 @@ $("#add_juvenile_btn").click(function()
   var offense = $("#select_offense").val()
   var date_of_offense = $("#date_of_offense").val()
   var contact_num = $("#contact").val()
-  var email_address = $("#email").val();
+  var guardian_name = $("#guardian_name").val();
 
   if (crime_location.trim().length === 0) //check if value is empty
   {
@@ -396,12 +396,12 @@ $("#add_juvenile_btn").click(function()
   $("#contact").addClass("is-invalid");
   $("#phno_validator_label").text("Please don't leave this area empty.")
   }
+  else if (guardian_name.trim().length === 0) //check if value is empty
+  {
+    $("#guardian_name").addClass("is-invalid");
+  }
   else
   {
-
-    function submit_new_juveniles()
-    { 
-
       if(contact_num.charAt(0) === "9" && contact_num.length === 10 && allCharactersSame(contact_num) != true && line1(contact_num) != true && line2(contact_num) != true
       && line3(contact_num) != true && line4(contact_num) != true && line5(contact_num) != true  && line6(contact_num) != true) 
       {
@@ -417,7 +417,7 @@ $("#add_juvenile_btn").click(function()
           offense:offense,
           date_of_offense:date_of_offense,
           contact_num:contact_num,
-          email_address:email_address
+          guardian_name:guardian_name
 
         },
         function (data, status) {
@@ -429,28 +429,6 @@ $("#add_juvenile_btn").click(function()
         $("#contact").addClass("is-invalid");
         $("#phno_validator_label").text("Invalid phone number; please type a valid 10-digit Philippine phone number (e.g. 9123456789).");
       }
-
-    }
-    if (email_address.trim().length != 0) //check if value is empty
-    {
-        function isEmail(email) {
-            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            return regex.test(email);
-        }
-
-        if( !isEmail(email_address)) { 
-            $("#email").addClass("is-invalid");
-        }
-        else
-        {
-          submit_new_juveniles();
-        }
-    }
-    else
-    {
-      email_address = 'N/A'
-      submit_new_juveniles();
-    }
 
   }
 
@@ -479,7 +457,7 @@ $("#update_juvenile_btn").click(function()
   var offense = $("#update_select_offense").val()
   var date_of_offense = $("#update_date_of_offense").val()
   var contact_num = $("#update_contact").val()
-  var email_address = $("#update_email").val();
+  var guardian_name = $("#update_guardian_name").val();
 
   if (crime_location.trim().length === 0) //check if value is empty
   {
@@ -517,11 +495,13 @@ $("#update_juvenile_btn").click(function()
   $("#update_contact").addClass("is-invalid");
   $("#update_phno_validator_label").text("Please don't leave this area empty.")
   }
+  else if (guardian_name.trim().length === 0) //check if value is empty
+  {
+    $("#update_guardian_name").addClass("is-invalid");
+  }
   else
   {
-
-    function update_juveniles()
-    { 
+ 
       if(contact_num.charAt(0) === "9" && contact_num.length === 10 && allCharactersSame(contact_num) != true && line1(contact_num) != true && line2(contact_num) != true
       && line3(contact_num) != true && line4(contact_num) != true && line5(contact_num) != true  && line6(contact_num) != true) 
       {
@@ -537,7 +517,7 @@ $("#update_juvenile_btn").click(function()
           offense:offense,
           date_of_offense:date_of_offense,
           contact_num:contact_num,
-          email_address:email_address,
+          guardian_name:guardian_name,
           juvenile_id_value:juvenile_id_value
 
         },
@@ -550,28 +530,6 @@ $("#update_juvenile_btn").click(function()
         $("#update_contact").addClass("is-invalid");
         $("#update_phno_validator_label").text("Invalid phone number; please type a valid 10-digit Philippine phone number (e.g. 9123456789).");
       }
-
-    }
-    if (email_address.trim().length != 0) //check if value is empty
-    {
-        function isEmail(email) {
-            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            return regex.test(email);
-        }
-
-        if( !isEmail(email_address)) { 
-            $("#update_email").addClass("is-invalid");
-        }
-        else
-        {
-          update_juveniles();
-        }
-    }
-    else
-    {
-      email_address = 'N/A'
-      update_juveniles();
-    }
 
   }
 
@@ -717,14 +675,7 @@ $("#juvenile_table").on('click','.update_juvenile_value',function(){
 
     $("#update_contact").val(col6.substr(3))
 
-    if(col5 === 'N/A')
-    {
-      $("#update_email").val("")
-    }
-    else
-    {
-      $("#update_email").val(col5)
-    }
+    $("#update_guardian_name").val(col5)
 
 
 

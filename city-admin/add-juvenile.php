@@ -91,10 +91,10 @@
   </div>
 
   <div class="mb-3">
-    <label for="email" class="form-label">Email Address</label>
-    <input type="email" maxlength="45" name="contact" class=" form-control barangay-form" id="email" placeholder="Email Address (Optional)">
+    <label for="guardian_name" class="form-label">Guardian Full Name*</label>
+    <input type="guardian_name" maxlength="45" name="contact" class=" form-control barangay-form" id="guardian_name" placeholder="Guardian Full Name">
     <div class="invalid-feedback">
-      Invalid email address, email address must look like this (e.g. freed@email.com).
+    Please don't leave this area empty.
     </div>
   </div>
 

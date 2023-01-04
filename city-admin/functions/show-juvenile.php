@@ -26,7 +26,7 @@ $columns = array(
     array( 'db' => 'age',    'dt' => 2, 'field' => 'age'),
     array( 'db' => 'gender',    'dt' => 3, 'field' => 'gender'),
     array( 'db' => 'address',    'dt' => 4, 'field' => 'address'),
-    array( 'db' => 'email',    'dt' => 5, 'field' => 'email'),
+    array( 'db' => 'guardian_name',    'dt' => 5, 'field' => 'guardian_name'),
     array( 'db' => 'phone',    'dt' => 6, 'field' => 'phone'),
     array( 'db' => 'offense_name',    'dt' => 7, 'field' => 'offense_name'),
     array( 'db' => 'barangay',    'dt' => 8, 'field' => 'barangay'),

@@ -76,7 +76,7 @@ include('includes/sidebar.php');
           <th style = "min-width: 45px;">Age</th>
           <th style = "min-width: 70px;">Gender</th>
           <th style = "min-width: 230px;">Personal Address</th>
-          <th style = "min-width: 200px;">Email</th>
+          <th style = "min-width: 200px;">Guardian Full Name</th>
           <th  style = "min-width: 110px;">Phone</th>
           <th style = "min-width: 160px;">Offense Committed</th>
           <th style = "min-width: 130px;">Offense Location</th>

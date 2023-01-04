@@ -410,7 +410,6 @@ $("#submit_filter_time").click(function()
     $("#age_max").val("");
     validator =false
   }
-
   if(isNaN(min_age_filter_variable))
   {
       min_age =  "default";
@@ -418,6 +417,14 @@ $("#submit_filter_time").click(function()
   else
   {
       min_age = min_age_filter_variable;
+
+      if(min_age < 11)
+      {
+        $("#age_min").addClass("is-invalid");
+        $("#age_min").val("");
+        validator =false
+      }
+
   }
 
   if(isNaN(max_age_filter_variable))
@@ -427,6 +434,12 @@ $("#submit_filter_time").click(function()
   else
   {
       max_age = max_age_filter_variable;
+      if(max_age > 17)
+      {
+        $("#age_max").addClass("is-invalid");
+        $("#age_max").val("");
+        validator =false
+      }
   }
 
   if(gender_filter_variable.trim().length != 0)
@@ -509,9 +522,11 @@ function stats_info()
 {
     var results =  [];
     let a = 0
+    var min_age_intervention = "default";
 
     if(min_age != "default")
     {
+      min_age_intervention = min_age;
       results[a] = "  Min Age: "+min_age+""
       a+=1
     }
@@ -549,6 +564,12 @@ function stats_info()
       let dateObj = new Date(dateStr);
       let readableDate = dateObj.toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
       results[a] = "  Max Date: "+readableDate+""
+      a+=1
+    }
+
+    if((min_age_intervention) >= 15)
+    {
+      results[a] = " Intervention: Bahay Pag-asa"
       a+=1
     }
 
