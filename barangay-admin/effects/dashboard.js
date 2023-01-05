@@ -283,7 +283,7 @@ function jv_charts()
 
                 var percentage_display = (parseInt(context.parsed.y) / sum) * 100
                 var modified_label = +parseInt(percentage_display).toLocaleString('en-US')+"%"        
-                return modified_label
+                return ''
               },
             labelPointStyle: function(context) {
               return {

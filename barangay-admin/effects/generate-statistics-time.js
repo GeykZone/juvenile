@@ -271,7 +271,7 @@ function jv_charts()
           drawBorder: false
         },
         ticks: {
-          padding: 20,
+          padding: 10,
           display: true,
           color: '#6d6a6a',
         }
@@ -283,7 +283,7 @@ function jv_charts()
           drawBorder: false
         },
         ticks: {
-          padding: 25,
+          padding: 15,
           display: true,
           color: '#6d6a6a',
         },
@@ -333,7 +333,7 @@ function jv_charts()
 
                 var percentage_display = (parseInt(context.parsed.y) / sum) * 100
                 var modified_label = +parseInt(percentage_display).toLocaleString('en-US')+"%"         
-                return modified_label
+                return ''
               },
             labelPointStyle: function(context) {
               return {
@@ -371,7 +371,7 @@ function jv_charts()
   },
 });
 
-$("#jvChart").addClass("rounded-4 p-0 border-3 border bg-opacity-50")
+$("#jvChart").addClass("rounded-4 p-3 pt-4 border-3 border bg-opacity-50")
 $("#jvChart").css("background-color","#ffffffff")
 
 
