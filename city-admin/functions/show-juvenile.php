@@ -23,8 +23,8 @@ $primaryKey = 'jd_id';
 $columns = array( 
     array( 'db' => 'fullname',    'dt' => 0, 'field' => 'fullname'), 
     array( 'db' => "DATE_FORMAT(dob,'%M %d, %Y')",    'dt' => 1, 'field' => "DATE_FORMAT(dob,'%M %d, %Y')"),
-    array( 'db' => 'age',    'dt' => 2, 'field' => 'age'),
-    array( 'db' => 'gender',    'dt' => 3, 'field' => 'gender'),
+    array( 'db' => "CONCAT(' ', age, ' ')",    'dt' => 2, 'field' => "CONCAT(' ', age, ' ')"),
+    array( 'db' => "CONCAT(' ', gender, ' ')",    'dt' => 3, 'field' => "CONCAT(' ', gender, ' ')"),
     array( 'db' => 'address',    'dt' => 4, 'field' => 'address'),
     array( 'db' => 'guardian_name',    'dt' => 5, 'field' => 'guardian_name'),
     array( 'db' => 'phone',    'dt' => 6, 'field' => 'phone'),
